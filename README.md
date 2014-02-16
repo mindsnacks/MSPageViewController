@@ -35,6 +35,8 @@ Then in your ```MSPageViewController``` subclass you can override this method to
 ```objc
 - (void)setUpViewController:(MyCustomControllerPage *)page
                     atIndex:(NSInteger)index  {
+	[super setUpViewController:page atIndex:index];
+
 	page.customData = [self dataForPageAtIndex:index];
 }
 ```
