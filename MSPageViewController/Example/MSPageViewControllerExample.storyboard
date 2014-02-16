@@ -134,7 +134,7 @@
                 <pageViewController storyboardIdentifier="MSPageViewControllerExample" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aNA-kg-caK" customClass="MSPageViewControllerExample" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zS-3h-0j7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="-439"/>
+            <point key="canvasLocation" x="187" y="-673"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
