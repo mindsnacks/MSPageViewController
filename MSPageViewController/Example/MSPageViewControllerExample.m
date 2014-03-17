@@ -19,8 +19,8 @@
 }
 
 // If not supplied in the subclass, the pages can be supplied with a runtime string attribute "pages" in the Storyboard, i.e. "page1,page2,page3,page4"
-- (NSArray *)pageIdentifiers {
-    return @[@"page1", @"page2", @"page3", @"page4"];
-}
+//- (NSArray *)pageIdentifiers {
+//    return @[@"page1", @"page2", @"page3", @"page4"];
+//}
 
 @end

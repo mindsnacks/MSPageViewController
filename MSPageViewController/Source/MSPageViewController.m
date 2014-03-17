@@ -9,7 +9,9 @@
 #import "MSPageViewController.h"
 #import "MSPageViewController+Protected.h"
 
-@implementation MSPageViewController
+@implementation MSPageViewController {
+    UIPageControl *_transparentPageControl;
+}
 
 - (id)initWithTransitionStyle:(UIPageViewControllerTransitionStyle)style
         navigationOrientation:(UIPageViewControllerNavigationOrientation)navigationOrientation
@@ -60,16 +62,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSAssert(self.pageCount > 0, @"%@ has no pages", self);
+    self.delegate = self;
+    NSInteger pageCount = self.pageCount;
+    NSAssert(pageCount > 0, @"%@ has no pages", self);
     
     [self setViewControllers:@[[self viewControllerAtIndex:0]]
                    direction:UIPageViewControllerNavigationDirectionForward
                     animated:NO
                   completion:nil];
     
-    if (self.pageCount == 1) {
+    if (pageCount == 1) {
         self.view.userInteractionEnabled = NO;
+    }
+    if (self.showsTransparentPageControl && pageCount > 1) {
+        CGSize viewSize = self.view.frame.size;
+        CGFloat defaultHeight = 37.0f;
+        CGFloat yPos = viewSize.height - defaultHeight ;
+        _transparentPageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0.0f, yPos, viewSize.width, defaultHeight)];
+        _transparentPageControl.numberOfPages = pageCount;
+        
+        [_transparentPageControl addTarget:self action:@selector(pageChanged:) forControlEvents:UIControlEventValueChanged];
+
+        [self.view addSubview:_transparentPageControl];
     }
 }
 
@@ -114,13 +128,31 @@
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    const BOOL shouldShowPageControl = (self.pageCount > 1);
-    
-    return (shouldShowPageControl) ? self.pageCount : 0;
+    NSInteger pageCount = self.pageCount;
+    return !self.showsTransparentPageControl && pageCount > 1 ? pageCount : 0;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     return 0;
+}
+
+#pragma mark - UIPageViewControllerDelegate
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if (completed) {
+        UIViewController <MSPageViewControllerChild> *currentVC = pageViewController.viewControllers[0];
+        NSLog(@"Current: %@, index: %i", currentVC, currentVC.pageIndex);
+        _transparentPageControl.currentPage = currentVC.pageIndex;
+    }
+}
+
+#pragma mark - UIPageControl events
+
+-(void)pageChanged:(UIPageControl*)pageControl {
+    [self setViewControllers:@[[self viewControllerAtIndex:pageControl.currentPage]]
+                   direction:UIPageViewControllerNavigationDirectionForward
+                    animated:NO
+                  completion:nil];
 }
 
 @end

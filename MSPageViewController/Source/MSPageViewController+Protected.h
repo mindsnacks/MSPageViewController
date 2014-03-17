@@ -14,7 +14,7 @@
  *
  * @see `MSPageViewControllerPage`.
  */
-@interface MSPageViewController () <UIPageViewControllerDataSource>
+@interface MSPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 /**
  * @note Must be overridden.

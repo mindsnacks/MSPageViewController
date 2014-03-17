@@ -15,6 +15,7 @@
 @interface MSPageViewController : UIPageViewController
 
 @property (nonatomic, strong) NSString *pages;
+@property (nonatomic) BOOL showsTransparentPageControl;
 
 @end
 
