@@ -38,6 +38,10 @@
 }
 
 - (NSArray *)pageIdentifiers {
+    //try to build from runtime attribute string
+    if (self.pages) {
+        return [self.pages componentsSeparatedByString:@","];
+    }
     [self doesNotRecognizeSelector:_cmd];
     
     return nil;

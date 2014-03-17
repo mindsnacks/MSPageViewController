@@ -14,6 +14,8 @@
  */
 @interface MSPageViewController : UIPageViewController
 
+@property (nonatomic, strong) NSString *pages;
+
 @end
 
 @protocol MSPageViewControllerChild <NSObject>

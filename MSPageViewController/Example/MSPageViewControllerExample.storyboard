@@ -131,7 +131,11 @@
         <!--Page View Controller Example-->
         <scene sceneID="Xz4-Yk-vvn">
             <objects>
-                <pageViewController storyboardIdentifier="MSPageViewControllerExample" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aNA-kg-caK" customClass="MSPageViewControllerExample" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="MSPageViewControllerExample" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aNA-kg-caK" customClass="MSPageViewControllerExample" sceneMemberID="viewController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="pages" value="page1,page2,page3"/>
+                    </userDefinedRuntimeAttributes>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zS-3h-0j7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="187" y="-673"/>
