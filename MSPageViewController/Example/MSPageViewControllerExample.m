@@ -18,8 +18,9 @@
     }
 }
 
-- (NSArray *)pageIdentifiers {
-    return @[@"page1", @"page2", @"page3", @"page4"];
-}
+// Override this to provide page identifiers from code.
+//- (NSArray *)pageIdentifiers {
+//    return @[@"page1", @"page2", @"page3", @"page4"];
+//}
 
 @end

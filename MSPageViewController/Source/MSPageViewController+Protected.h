@@ -14,10 +14,10 @@
  *
  * @see `MSPageViewControllerPage`.
  */
-@interface MSPageViewController () <UIPageViewControllerDataSource>
+@interface MSPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 /**
- * @note Must be overridden.
+ * @note If not overridden, will try to build the array from the comma-separated runtime attribute `self.ms_pages`
  * @discussion The pages for this page view controller
  * will be instantiated from `self.storyboard`.
  */

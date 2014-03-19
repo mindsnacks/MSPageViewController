@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Bac-mN-dim" secondAttribute="centerY" id="6zY-RU-Fg6"/>
                             <constraint firstAttribute="centerX" secondItem="Bac-mN-dim" secondAttribute="centerX" id="sBk-0P-SSz"/>
@@ -82,11 +82,11 @@
                                 <rect key="frame" x="107" y="274" width="107" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.31764705879999999" green="0.70980392160000005" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="lQD-yy-bRk" secondAttribute="centerY" id="UDw-IP-5wQ"/>
                             <constraint firstAttribute="centerX" secondItem="lQD-yy-bRk" secondAttribute="centerX" id="sYi-F6-2Gy"/>
@@ -117,7 +117,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.76862745099999996" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="hhP-Un-bck" secondAttribute="centerY" id="JXA-Sc-ug0"/>
                             <constraint firstAttribute="centerX" secondItem="hhP-Un-bck" secondAttribute="centerX" id="q4G-eu-rM6"/>
@@ -128,13 +128,21 @@
             </objects>
             <point key="canvasLocation" x="713" y="5"/>
         </scene>
-        <!--Page View Controller Example-->
+        <!--Page View Controller Example - Welcome-->
         <scene sceneID="Xz4-Yk-vvn">
             <objects>
-                <pageViewController storyboardIdentifier="MSPageViewControllerExample" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aNA-kg-caK" customClass="MSPageViewControllerExample" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="MSPageViewControllerExample" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aNA-kg-caK" customClass="MSPageViewControllerExample" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Welcome" id="yma-d6-zFA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="a11-BK-4hF"/>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="ms_pages" value="page1,page2,page3,page4"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="ms_transparentControl" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zS-3h-0j7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="-673"/>
+            <point key="canvasLocation" x="713" y="-673"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
