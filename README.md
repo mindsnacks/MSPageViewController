@@ -8,18 +8,22 @@ With ```MSPageViewController``` you will be able to design each page from a sing
 ![Example Storyboard](Images/image1.png "Example Storyboard")
 
 ## How to Use:
-First you must create a [subclass of ```MSPageViewController```](MSPageViewController/Source/MSPageViewController+Protected.h) and override ```-pageIdentifiers```. Example:
+
+Create a storyboard, add a ```UIPageViewController``` object and change its class to ```MSPageViewController```.
+Add a user-defined runtime attribute called ``ms_pages``` of type NSString. Provide a comma-separated list of ```pageIdentifiers```.
+Then you can add the controllers, setting their ```Storyboard ID```s to what you provided in ```pageIdentifiers```.
+Each of them must be a class that conforms to ```MSPageViewControllerChild``` (if you don't need to add any extra functionality to it you can use [```MSPageViewControllerPage```](MSPageViewController/Source/MSPageViewControllerPage.h)).
+
+When your controller is instantiated, it will use these controllers to create each page.
+
+Optionally, you can create a [subclass of ```MSPageViewController```](MSPageViewController/Source/MSPageViewController+Protected.h) and override ```-pageIdentifiers```. This will override the ```self.ms_pages``` property. Example:
 ```objc
 - (NSArray *)pageIdentifiers {
 	return @[@"page1", @"page2"];
 }
 ```
 
-Then you have to create a storyboard, add a ```UIPageViewController``` object and change its class to ```MSPageViewController```.
-Then you can add the controllers, setting their ```Storyboard ID```s to what you returned in ```pageIdentifiers```.
-Each of them must be a class that conforms to ```MSPageViewControllerChild``` (if you don't need to add any extra functionality to it you can use [```MSPageViewControllerPage```](MSPageViewController/Source/MSPageViewControllerPage.h)).
-
-When your controller is instantiated, it will use these controllers to create each page.
+There is also the ```BOOL``` ```ms_transparentControl``` runtime attribute, it allows for full-screen view controllers, with a translucent UIPageControl on top of it instead of a fixed bar on the bottom.
 
 Make sure you also check out the sample project in this repo.
 

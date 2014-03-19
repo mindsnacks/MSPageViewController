@@ -128,18 +128,21 @@
             </objects>
             <point key="canvasLocation" x="713" y="5"/>
         </scene>
-        <!--Page View Controller Example-->
+        <!--Page View Controller Example - Welcome-->
         <scene sceneID="Xz4-Yk-vvn">
             <objects>
                 <pageViewController storyboardIdentifier="MSPageViewControllerExample" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aNA-kg-caK" customClass="MSPageViewControllerExample" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Welcome" id="yma-d6-zFA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="a11-BK-4hF"/>
+                    </navigationItem>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="pages" value="page1,page2,page3,page4"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="showsTransparentPageControl" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="ms_pages" value="page1,page2,page3,page4"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="ms_transparentControl" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zS-3h-0j7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="-673"/>
+            <point key="canvasLocation" x="713" y="-673"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

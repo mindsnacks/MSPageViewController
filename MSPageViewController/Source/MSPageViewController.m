@@ -41,8 +41,8 @@
 
 - (NSArray *)pageIdentifiers {
     //try to build from runtime attribute string
-    if (self.pages) {
-        return [self.pages componentsSeparatedByString:@","];
+    if (self.ms_pages) {
+        return [self.ms_pages componentsSeparatedByString:@","];
     }
     [self doesNotRecognizeSelector:_cmd];
     
@@ -58,7 +58,7 @@
     
 }
 
-#pragma mark -
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,9 +74,10 @@
     if (pageCount == 1) {
         self.view.userInteractionEnabled = NO;
     }
-    if (self.showsTransparentPageControl && pageCount > 1) {
+    if (self.ms_transparentControl && pageCount > 1) {
         CGSize viewSize = self.view.frame.size;
-        CGFloat defaultHeight = 37.0f;
+        // This should be 37.0f, but its best not to hard code it.
+        CGFloat defaultHeight = [[UIPageControl new] sizeForNumberOfPages:pageCount].height;
         CGFloat yPos = viewSize.height - defaultHeight ;
         _transparentPageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0.0f, yPos, viewSize.width, defaultHeight)];
         _transparentPageControl.numberOfPages = pageCount;
@@ -129,7 +130,7 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     NSInteger pageCount = self.pageCount;
-    return !self.showsTransparentPageControl && pageCount > 1 ? pageCount : 0;
+    return !self.ms_transparentControl && pageCount > 1 ? pageCount : 0;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
