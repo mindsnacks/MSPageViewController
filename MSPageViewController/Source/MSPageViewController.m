@@ -77,10 +77,12 @@
     if (self.ms_transparentControl && pageCount > 1) {
         CGSize viewSize = self.view.frame.size;
         CGSize preferredSize = [[UIPageControl new] sizeForNumberOfPages:pageCount];
+        CGFloat defaultWidth = preferredSize.width;
         // This should be 37.0f, but its best not to hard code it.
         CGFloat defaultHeight = preferredSize.height;
+        CGFloat xPos = (viewSize.width - defaultWidth) / 2;
         CGFloat yPos = viewSize.height - defaultHeight ;
-        _transparentPageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0.0f, yPos, preferredSize.width, defaultHeight)];
+        _transparentPageControl = [[UIPageControl alloc]initWithFrame:CGRectIntegral(CGRectMake(xPos, yPos, defaultWidth, defaultHeight))];
         _transparentPageControl.numberOfPages = pageCount;
         
         [_transparentPageControl addTarget:self action:@selector(pageChanged:) forControlEvents:UIControlEventValueChanged];
