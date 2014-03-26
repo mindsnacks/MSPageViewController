@@ -29,4 +29,9 @@
 - (void)setUpViewController:(UIViewController<MSPageViewControllerChild> *)viewController
                     atIndex:(NSInteger)index __attribute((objc_requires_super));
 
+/**
+ * @discussion this method can be used to programatically navigate to a page.
+ */
+- (UIViewController *)viewControllerAtIndex:(NSInteger)index;
+
 @end
