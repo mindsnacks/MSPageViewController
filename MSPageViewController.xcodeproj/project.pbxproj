@@ -225,7 +225,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MS;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MindSnacks;
 				TargetAttributes = {
 					57EFFA6818B149F7002E5577 = {
@@ -482,6 +482,7 @@
 				57EFFA7C18B149F8002E5577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57EFFA7D18B149F8002E5577 /* Build configuration list for PBXNativeTarget "MSPageViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +491,7 @@
 				57EFFA7F18B149F8002E5577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
