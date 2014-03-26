@@ -109,14 +109,14 @@
     return result;
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    const BOOL shouldShowPageControl = (self.pageCount > 1);
+- (NSInteger)presentationCountForPageViewController:(MSPageViewController *)pageViewController {
+    const BOOL shouldShowPageControl = (pageViewController.pageCount > 1);
     
-    return (shouldShowPageControl) ? self.pageCount : 0;
+    return (shouldShowPageControl) ? pageViewController.pageCount : 0;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return 0;
+    return [pageViewController.viewControllers.lastObject pageIndex];
 }
 
 @end
