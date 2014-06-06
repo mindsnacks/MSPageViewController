@@ -86,29 +86,53 @@
 }
 
 - (UIViewController *)viewControllerAtIndex:(NSInteger)index {
-    UIViewController<MSPageViewControllerChild> *result = nil;
     
-    if (index >= 0 && index < self.pageCount) {
-        NSAssert(self.storyboard,
-                 @"This controller is only meant to be used inside of a UIStoryboard");
+    UIViewController<MSPageViewControllerChild> *result = nil;
+    NSInteger newIndex; // tracks the index
+    
+    if (!self.infiniteScrolling) {
         
-        result = [self.storyboard instantiateViewControllerWithIdentifier:self.pageIdentifiers[(NSUInteger)index]];
+        if (index >= 0 && index < self.pageCount) {
+            newIndex = index;
+        } else {
+            return nil; // no view controller before the first one or after the last one
+        }
         
-        NSParameterAssert(result);
-        NSAssert([result conformsToProtocol:@protocol(MSPageViewControllerChild)],
-                 @"Child view controller (%@) must conform to %@",
-                 result,
-                 NSStringFromProtocol(@protocol(MSPageViewControllerChild)));
+    } else {
         
-        result.pageIndex = index;
-        
-        [self setUpViewController:result
-                          atIndex:index];
+        if (index >= 0 && index < self.pageCount) { // same condition as above but this is for infinite scrolling == YES
+            
+            newIndex = index;
+            
+        } else if (index < 0) {
+            
+            newIndex = [self.pageIdentifiers count] - 1; // if its the first page, going back means going to the last page
+            
+        } else {
+            
+            newIndex = 0; // if its the last page, going forward means to the first page
+        }
     }
+    
+    NSAssert(self.storyboard,
+             @"This controller is only meant to be used inside of a UIStoryboard");
+    
+    result = [self.storyboard instantiateViewControllerWithIdentifier:self.pageIdentifiers[(NSUInteger)newIndex]];
+    
+    NSParameterAssert(result);
+    NSAssert([result conformsToProtocol:@protocol(MSPageViewControllerChild)],
+             @"Child view controller (%@) must conform to %@",
+             result,
+             NSStringFromProtocol(@protocol(MSPageViewControllerChild)));
+    
+    result.pageIndex = newIndex;
+    
+    [self setUpViewController:result
+                      atIndex:newIndex];
     
     return result;
 }
-
+    
 - (NSInteger)presentationCountForPageViewController:(MSPageViewController *)pageViewController {
     const BOOL shouldShowPageControl = (pageViewController.pageCount > 1);
     
