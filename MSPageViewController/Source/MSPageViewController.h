@@ -14,6 +14,8 @@
  */
 @interface MSPageViewController : UIPageViewController
 
+@property (nonatomic) BOOL infiniteScrolling; // ability to scroll horizontally forever. At last page, it returns to the first
+
 @end
 
 @protocol MSPageViewControllerChild <NSObject>
