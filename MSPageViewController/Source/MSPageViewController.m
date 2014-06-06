@@ -57,6 +57,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if (!self.infiniteScrolling) {
+        self.infiniteScrolling = NO;
+    }
+    
     NSAssert(self.pageCount > 0, @"%@ has no pages", self);
     
     [self setViewControllers:@[[self viewControllerAtIndex:0]]

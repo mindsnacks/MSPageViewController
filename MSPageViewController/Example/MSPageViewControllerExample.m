@@ -19,8 +19,8 @@
 }
 
 -(void)viewDidLoad {
-    self.infiniteScrolling = NO; // must be before the viewLoads so the first controller is set
-                                // Can be set to YES if you want continuous scrolling horizontally
+    self.infiniteScrolling = YES; // Can be set to YES if you want continuous scrolling horizontally
+                                    // Otherwise it is automatically NO
     [super viewDidLoad];
 }
 
