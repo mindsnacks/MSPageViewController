@@ -69,6 +69,17 @@
     }
 }
 
+- (void)changePage:(NSInteger)page {
+    
+    NSInteger direction = page < self.currentPage ? UIPageViewControllerNavigationDirectionReverse : UIPageViewControllerNavigationDirectionForward;
+    
+    if(page > -1 && page <= self.pageCount)
+        [self setViewControllers:@[[self viewControllerAtIndex:page]]
+                       direction:direction
+                        animated:YES
+                      completion:nil];
+}
+
 #pragma mark - UIPageViewControllerDataSource
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
@@ -104,6 +115,8 @@
         
         [self setUpViewController:result
                           atIndex:index];
+        
+        self.currentPage = index;
     }
     
     return result;

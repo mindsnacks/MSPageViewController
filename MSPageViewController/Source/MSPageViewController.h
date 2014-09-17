@@ -14,6 +14,8 @@
  */
 @interface MSPageViewController : UIPageViewController
 
+- (void)changePage:(NSInteger)page;
+
 @end
 
 @protocol MSPageViewControllerChild <NSObject>
