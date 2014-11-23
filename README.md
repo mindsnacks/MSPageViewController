@@ -11,13 +11,19 @@ With ```MSPageViewController``` you will be able to design each page from a sing
 First you must create a [subclass of ```MSPageViewController```](MSPageViewController/Source/MSPageViewController+Protected.h) and override ```-pageIdentifiers```. Example:
 ```objc
 - (NSArray *)pageIdentifiers {
-	return @[@"page1", @"page2"];
+	return @[@"page1", @"page2", @"AnotherStoryboard:page3"];
 }
 ```
 
 Then you have to create a storyboard, add a ```UIPageViewController``` object and change its class to ```MSPageViewController```.
 Then you can add the controllers, setting their ```Storyboard ID```s to what you returned in ```pageIdentifiers```.
 Each of them must be a class that conforms to ```MSPageViewControllerChild``` (if you don't need to add any extra functionality to it you can use [```MSPageViewControllerPage```](MSPageViewController/Source/MSPageViewControllerPage.h)).
+
+You might specify Storyboard name using colon
+```
+StoryBoardName:pageIdentifier
+```
+Also, you can specify bunlde. In order to do that you have to override ```- (NSBundle*)storyboardBundleForIndex:(NSInteger)index```
 
 When your controller is instantiated, it will use these controllers to create each page.
 

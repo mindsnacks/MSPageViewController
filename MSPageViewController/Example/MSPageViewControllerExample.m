@@ -19,7 +19,7 @@
 }
 
 - (NSArray *)pageIdentifiers {
-    return @[@"page1", @"page2", @"page3", @"page4"];
+    return @[@"page1", @"page2", @"page3", @"page4", @"AnotherStoryboard:page5"];
 }
 
 @end

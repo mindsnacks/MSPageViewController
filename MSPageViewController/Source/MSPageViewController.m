@@ -92,7 +92,7 @@
         NSAssert(self.storyboard,
                  @"This controller is only meant to be used inside of a UIStoryboard");
         
-        result = [self.storyboard instantiateViewControllerWithIdentifier:self.pageIdentifiers[(NSUInteger)index]];
+        result = [self instantiateViewController: self.pageIdentifiers[(NSUInteger)index] withIndex:index];
         
         NSParameterAssert(result);
         NSAssert([result conformsToProtocol:@protocol(MSPageViewControllerChild)],
@@ -118,5 +118,30 @@
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     return [pageViewController.viewControllers.lastObject pageIndex];
 }
+
+#pragma mark ViewController instantiation
+-(UIViewController<MSPageViewControllerChild> *)instantiateViewController:(NSString*)identifier withIndex: (NSInteger) index {
+    UIViewController<MSPageViewControllerChild> *result = nil;
+    
+    UIStoryboard* storyboard = self.storyboard;
+    
+    NSArray* storyboardAndIdentifier = [identifier componentsSeparatedByString: @":"];
+    
+    if (storyboardAndIdentifier.count == 2) {
+        storyboard = [UIStoryboard storyboardWithName: storyboardAndIdentifier[0] bundle:[self storyboardBundleForIndex: index]];
+        identifier = storyboardAndIdentifier[1];
+        NSAssert(storyboard, @"Unable to find specified Storyboard by name");
+        NSAssert([identifier length] > 0, @"Specified identified should not be empty");
+    }
+    result = [storyboard instantiateViewControllerWithIdentifier:identifier];
+    
+    NSParameterAssert(result);
+    return result;
+}
+
+- (NSBundle*)storyboardBundleForIndex:(NSInteger)index {
+    return nil;
+}
+
 
 @end

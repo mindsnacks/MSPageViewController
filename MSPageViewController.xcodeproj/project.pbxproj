@@ -23,6 +23,7 @@
 		57EFFA8A18B159B5002E5577 /* MSPageViewControllerPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFFA8918B159B5002E5577 /* MSPageViewControllerPage.m */; };
 		57EFFA8E18B15AC6002E5577 /* MSPageViewControllerExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFFA8D18B15AC6002E5577 /* MSPageViewControllerExample.m */; };
 		57EFFA9018B15AD9002E5577 /* MSPageViewControllerExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57EFFA8F18B15AD9002E5577 /* MSPageViewControllerExample.storyboard */; };
+		653D9C051A22362E00DCE4F5 /* AnotherStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D9C041A22362E00DCE4F5 /* AnotherStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		57EFFA8C18B15AC6002E5577 /* MSPageViewControllerExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSPageViewControllerExample.h; path = Example/MSPageViewControllerExample.h; sourceTree = "<group>"; };
 		57EFFA8D18B15AC6002E5577 /* MSPageViewControllerExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSPageViewControllerExample.m; path = Example/MSPageViewControllerExample.m; sourceTree = "<group>"; };
 		57EFFA8F18B15AD9002E5577 /* MSPageViewControllerExample.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MSPageViewControllerExample.storyboard; path = Example/MSPageViewControllerExample.storyboard; sourceTree = "<group>"; };
+		653D9C041A22362E00DCE4F5 /* AnotherStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AnotherStoryboard.storyboard; path = ../AnotherStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				57EFFA8C18B15AC6002E5577 /* MSPageViewControllerExample.h */,
 				57EFFA8D18B15AC6002E5577 /* MSPageViewControllerExample.m */,
 				57EFFA8F18B15AD9002E5577 /* MSPageViewControllerExample.storyboard */,
+				653D9C041A22362E00DCE4F5 /* AnotherStoryboard.storyboard */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57EFFA9018B15AD9002E5577 /* MSPageViewControllerExample.storyboard in Resources */,
+				653D9C051A22362E00DCE4F5 /* AnotherStoryboard.storyboard in Resources */,
 				57EFFA5C18B149F7002E5577 /* InfoPlist.strings in Resources */,
 				57EFFA6418B149F7002E5577 /* Images.xcassets in Resources */,
 			);
