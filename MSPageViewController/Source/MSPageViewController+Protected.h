@@ -34,4 +34,17 @@
  */
 - (UIViewController *)viewControllerAtIndex:(NSInteger)index;
 
+/**
+ * @note Can be overridden.
+ * @discussion Storyboard factory. May be overriden to provide TyphoonStoryboard instance
+ */
+- (UIStoryboard *)storyboardWithName:(NSString *)name index:(NSInteger) storyboardIndex;
+
+/**
+ * @note Can be overridden.
+ * @discussion Controller factory. 
+ */
+
+- (UIViewController *)instantiateViewControllerWithIdentifier:(NSString*)identifier storyboard:(UIStoryboard*) fromStoryboard;
+
 @end

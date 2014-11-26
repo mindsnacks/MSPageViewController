@@ -52,6 +52,14 @@
     
 }
 
+- (UIStoryboard *)storyboardWithName:(NSString *)name index:(NSInteger) storyboardIndex {
+    return [UIStoryboard storyboardWithName: name bundle: nil];
+}
+
+- (UIViewController *)instantiateViewControllerWithIdentifier:(NSString*)identifier storyboard:(UIStoryboard*) fromStoryboard {
+    return [fromStoryboard instantiateViewControllerWithIdentifier:identifier];
+}
+
 #pragma mark -
 
 - (void)viewDidLoad {
@@ -128,19 +136,15 @@
     NSArray* storyboardAndIdentifier = [identifier componentsSeparatedByString: @":"];
     
     if (storyboardAndIdentifier.count == 2) {
-        storyboard = [UIStoryboard storyboardWithName: storyboardAndIdentifier[0] bundle:[self storyboardBundleForIndex: index]];
+        storyboard = [self storyboardWithName: storyboardAndIdentifier[0] index: index];
         identifier = storyboardAndIdentifier[1];
         NSAssert(storyboard, @"Unable to find specified Storyboard by name");
         NSAssert([identifier length] > 0, @"Specified identified should not be empty");
     }
-    result = [storyboard instantiateViewControllerWithIdentifier:identifier];
+    result = (UIViewController<MSPageViewControllerChild>*)[self instantiateViewControllerWithIdentifier:identifier storyboard: storyboard];
     
     NSParameterAssert(result);
     return result;
-}
-
-- (NSBundle*)storyboardBundleForIndex:(NSInteger)index {
-    return nil;
 }
 
 
