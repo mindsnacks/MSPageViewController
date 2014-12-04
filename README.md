@@ -17,7 +17,6 @@ First you must create a [subclass of ```MSPageViewController```](MSPageViewContr
 
 Then you have to create a storyboard, add a ```UIPageViewController``` object and change its class to ```MSPageViewController```.
 Then you can add the controllers, setting their ```Storyboard ID```s to what you returned in ```pageIdentifiers```.
-Each of them must be a class that conforms to ```MSPageViewControllerChild``` (if you don't need to add any extra functionality to it you can use [```MSPageViewControllerPage```](MSPageViewController/Source/MSPageViewControllerPage.h)).
 
 When your controller is instantiated, it will use these controllers to create each page.
 

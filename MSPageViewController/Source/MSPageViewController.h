@@ -15,9 +15,3 @@
 @interface MSPageViewController : UIPageViewController
 
 @end
-
-@protocol MSPageViewControllerChild <NSObject>
-
-@property (nonatomic) NSInteger pageIndex;
-
-@end

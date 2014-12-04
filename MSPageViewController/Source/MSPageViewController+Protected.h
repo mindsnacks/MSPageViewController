@@ -9,9 +9,6 @@
 #import "MSPageViewController.h"
 
 /**
- * Subclassing notes:
- *  Child view controllers must conform to `MSPageViewControllerChild`.
- *
  * @see `MSPageViewControllerPage`.
  */
 @interface MSPageViewController () <UIPageViewControllerDataSource>
@@ -26,7 +23,7 @@
 /**
  * Can be overriden to perform additional configuration on the controller.
  */
-- (void)setUpViewController:(UIViewController<MSPageViewControllerChild> *)viewController
+- (void)setUpViewController:(UIViewController *)viewController
                     atIndex:(NSInteger)index __attribute((objc_requires_super));
 
 /**
