@@ -47,7 +47,7 @@ Then in your ```MSPageViewController``` subclass you can override this method to
 Just add this line to your `Podfile`:
 
 ```
-pod 'MSPageViewController', '~> 1.0.0'
+pod 'MSPageViewController', '~> 1.0.1'
 ```
 
 - Manually:
