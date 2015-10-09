@@ -31,6 +31,36 @@
     return self;
 }
 
+#pragma mark - Public
+
+- (NSInteger)pageCount {
+    return (NSInteger)self.pageIdentifiers.count;
+}
+
+- (NSInteger)currentPageIndex {
+    return [self.viewControllers.lastObject pageIndex];
+}
+
+- (BOOL)moveToPageAtIndex:(NSInteger)index animated:(BOOL)animated completion:(void (^)(BOOL))completion {
+    UIViewController *viewController = [self viewControllerAtIndex:index];
+    
+    if (viewController != nil && index != self.currentPageIndex) {
+        if (index < self.currentPageIndex) {
+            [self setViewControllers:@[viewController]
+                           direction:UIPageViewControllerNavigationDirectionReverse
+                            animated:animated
+                          completion:completion];
+        } else {
+            [self setViewControllers:@[viewController]
+                           direction:UIPageViewControllerNavigationDirectionForward
+                            animated:animated
+                          completion:completion];
+        }
+        return true;
+    }
+    return false;
+}
+
 #pragma mark - Protected
 
 - (void)ms_setUp {
@@ -41,10 +71,6 @@
     [self doesNotRecognizeSelector:_cmd];
     
     return nil;
-}
-
-- (NSInteger)pageCount {
-    return (NSInteger)self.pageIdentifiers.count;
 }
 
 - (void)setUpViewController:(UIViewController<MSPageViewControllerChild> *)viewController

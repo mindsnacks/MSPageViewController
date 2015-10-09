@@ -14,6 +14,10 @@
  */
 @interface MSPageViewController : UIPageViewController
 
+@property (nonatomic, readonly) NSInteger pageCount;
+@property (nonatomic, readonly) NSInteger currentPageIndex;
+- (BOOL)moveToPageAtIndex:(NSInteger)index animated:(BOOL)animated completion:(void (^)(BOOL))completion;
+
 @end
 
 @protocol MSPageViewControllerChild <NSObject>
