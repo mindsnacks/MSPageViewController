@@ -60,4 +60,4 @@ Simply add the files under [Source](MSPageViewController/Source) to your project
 - Supports iOS iOS6+.
 
 ## License
-`MSPageViewController` is available under the WTFPL license. See the [LICENSE file](LICENSE) for more info.
+`MSPageViewController` is available under the MIT license. See the [LICENSE file](LICENSE) for more info.
