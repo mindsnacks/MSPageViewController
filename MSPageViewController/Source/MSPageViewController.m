@@ -78,6 +78,14 @@
     
 }
 
+- (UIStoryboard *)storyboardWithName:(NSString *)name index:(NSInteger) storyboardIndex {
+    return [UIStoryboard storyboardWithName: name bundle: nil];
+}
+
+- (UIViewController *)instantiateViewControllerWithIdentifier:(NSString*)identifier storyboard:(UIStoryboard*) fromStoryboard {
+    return [fromStoryboard instantiateViewControllerWithIdentifier:identifier];
+}
+
 #pragma mark -
 
 - (void)viewDidLoad {
@@ -118,7 +126,7 @@
         NSAssert(self.storyboard,
                  @"This controller is only meant to be used inside of a UIStoryboard");
         
-        result = [self.storyboard instantiateViewControllerWithIdentifier:self.pageIdentifiers[(NSUInteger)index]];
+        result = [self instantiateViewController: self.pageIdentifiers[(NSUInteger)index] withIndex:index];
         
         NSParameterAssert(result);
         NSAssert([result conformsToProtocol:@protocol(MSPageViewControllerChild)],
@@ -144,5 +152,26 @@
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     return [pageViewController.viewControllers.lastObject pageIndex];
 }
+
+#pragma mark ViewController instantiation
+-(UIViewController<MSPageViewControllerChild> *)instantiateViewController:(NSString*)identifier withIndex: (NSInteger) index {
+    UIViewController<MSPageViewControllerChild> *result = nil;
+    
+    UIStoryboard* storyboard = self.storyboard;
+    
+    NSArray* storyboardAndIdentifier = [identifier componentsSeparatedByString: @":"];
+    
+    if (storyboardAndIdentifier.count == 2) {
+        storyboard = [self storyboardWithName: storyboardAndIdentifier[0] index: index];
+        identifier = storyboardAndIdentifier[1];
+        NSAssert(storyboard, @"Unable to find specified Storyboard by name");
+        NSAssert([identifier length] > 0, @"Specified identified should not be empty");
+    }
+    result = (UIViewController<MSPageViewControllerChild>*)[self instantiateViewControllerWithIdentifier:identifier storyboard: storyboard];
+    
+    NSParameterAssert(result);
+    return result;
+}
+
 
 @end
