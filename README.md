@@ -42,7 +42,7 @@ Then in your ```MSPageViewController``` subclass you can override this method to
 ```
 
 ## Instalation:
-- Using [Cocoapods](http://cocoapods.org/):
+- Using [CocoaPods](http://cocoapods.org/):
 
 Just add this line to your `Podfile`:
 
