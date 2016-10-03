@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351DDAD11DA3242900B0E8D5 /* MSPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 57EFFA8318B15105002E5577 /* MSPageViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		351DDAD21DA3242900B0E8D5 /* MSPageViewController+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 57EFFA8718B1515D002E5577 /* MSPageViewController+Protected.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		351DDAD31DA3242900B0E8D5 /* MSPageViewControllerPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 57EFFA8818B159B5002E5577 /* MSPageViewControllerPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		351DDAD41DA3243300B0E8D5 /* MSPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFFA8418B15105002E5577 /* MSPageViewController.m */; };
+		351DDAD51DA3243300B0E8D5 /* MSPageViewControllerPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EFFA8918B159B5002E5577 /* MSPageViewControllerPage.m */; };
 		57EFFA5218B149F7002E5577 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EFFA5118B149F7002E5577 /* Foundation.framework */; };
 		57EFFA5418B149F7002E5577 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EFFA5318B149F7002E5577 /* CoreGraphics.framework */; };
 		57EFFA5618B149F7002E5577 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EFFA5518B149F7002E5577 /* UIKit.framework */; };
@@ -36,7 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		57EFFA4E18B149F7002E5577 /* MSPageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSPageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		351DDAC91DA3234300B0E8D5 /* MSPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MSPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		351DDACC1DA3234300B0E8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57EFFA4E18B149F7002E5577 /* MSPageViewControllerSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSPageViewControllerSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EFFA5118B149F7002E5577 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		57EFFA5318B149F7002E5577 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		57EFFA5518B149F7002E5577 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -63,6 +70,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		351DDAC51DA3234300B0E8D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57EFFA4B18B149F7002E5577 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,11 +100,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		351DDACA1DA3234300B0E8D5 /* MSPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				351DDACC1DA3234300B0E8D5 /* Info.plist */,
+			);
+			path = MSPageViewController;
+			sourceTree = "<group>";
+		};
 		57EFFA4518B149F7002E5577 = {
 			isa = PBXGroup;
 			children = (
-				57EFFA5718B149F7002E5577 /* MSPageViewController */,
+				57EFFA5718B149F7002E5577 /* MSPageViewControllerSampleApp */,
 				57EFFA7018B149F7002E5577 /* MSPageViewControllerTests */,
+				351DDACA1DA3234300B0E8D5 /* MSPageViewController */,
 				57EFFA5018B149F7002E5577 /* Frameworks */,
 				57EFFA4F18B149F7002E5577 /* Products */,
 			);
@@ -99,8 +122,9 @@
 		57EFFA4F18B149F7002E5577 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57EFFA4E18B149F7002E5577 /* MSPageViewController.app */,
+				57EFFA4E18B149F7002E5577 /* MSPageViewControllerSampleApp.app */,
 				57EFFA6918B149F7002E5577 /* MSPageViewControllerTests.xctest */,
+				351DDAC91DA3234300B0E8D5 /* MSPageViewController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +140,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		57EFFA5718B149F7002E5577 /* MSPageViewController */ = {
+		57EFFA5718B149F7002E5577 /* MSPageViewControllerSampleApp */ = {
 			isa = PBXGroup;
 			children = (
 				57EFFA8618B1512C002E5577 /* Source */,
@@ -126,6 +150,7 @@
 				57EFFA6318B149F7002E5577 /* Images.xcassets */,
 				57EFFA5818B149F7002E5577 /* Supporting Files */,
 			);
+			name = MSPageViewControllerSampleApp;
 			path = MSPageViewController;
 			sourceTree = "<group>";
 		};
@@ -182,10 +207,41 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		351DDAC61DA3234300B0E8D5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				351DDAD11DA3242900B0E8D5 /* MSPageViewController.h in Headers */,
+				351DDAD21DA3242900B0E8D5 /* MSPageViewController+Protected.h in Headers */,
+				351DDAD31DA3242900B0E8D5 /* MSPageViewControllerPage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		57EFFA4D18B149F7002E5577 /* MSPageViewController */ = {
+		351DDAC81DA3234300B0E8D5 /* MSPageViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57EFFA7A18B149F8002E5577 /* Build configuration list for PBXNativeTarget "MSPageViewController" */;
+			buildConfigurationList = 351DDACE1DA3234300B0E8D5 /* Build configuration list for PBXNativeTarget "MSPageViewController" */;
+			buildPhases = (
+				351DDAC41DA3234300B0E8D5 /* Sources */,
+				351DDAC51DA3234300B0E8D5 /* Frameworks */,
+				351DDAC61DA3234300B0E8D5 /* Headers */,
+				351DDAC71DA3234300B0E8D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSPageViewController;
+			productName = MSPageViewController;
+			productReference = 351DDAC91DA3234300B0E8D5 /* MSPageViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		57EFFA4D18B149F7002E5577 /* MSPageViewControllerSampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57EFFA7A18B149F8002E5577 /* Build configuration list for PBXNativeTarget "MSPageViewControllerSampleApp" */;
 			buildPhases = (
 				57EFFA4A18B149F7002E5577 /* Sources */,
 				57EFFA4B18B149F7002E5577 /* Frameworks */,
@@ -195,9 +251,9 @@
 			);
 			dependencies = (
 			);
-			name = MSPageViewController;
+			name = MSPageViewControllerSampleApp;
 			productName = MSPageViewController;
-			productReference = 57EFFA4E18B149F7002E5577 /* MSPageViewController.app */;
+			productReference = 57EFFA4E18B149F7002E5577 /* MSPageViewControllerSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		57EFFA6818B149F7002E5577 /* MSPageViewControllerTests */ = {
@@ -228,6 +284,10 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = MindSnacks;
 				TargetAttributes = {
+					351DDAC81DA3234300B0E8D5 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
 					57EFFA6818B149F7002E5577 = {
 						TestTargetID = 57EFFA4D18B149F7002E5577;
 					};
@@ -245,13 +305,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57EFFA4D18B149F7002E5577 /* MSPageViewController */,
+				57EFFA4D18B149F7002E5577 /* MSPageViewControllerSampleApp */,
 				57EFFA6818B149F7002E5577 /* MSPageViewControllerTests */,
+				351DDAC81DA3234300B0E8D5 /* MSPageViewController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		351DDAC71DA3234300B0E8D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57EFFA4C18B149F7002E5577 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,6 +341,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		351DDAC41DA3234300B0E8D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				351DDAD41DA3243300B0E8D5 /* MSPageViewController.m in Sources */,
+				351DDAD51DA3243300B0E8D5 /* MSPageViewControllerPage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		57EFFA4A18B149F7002E5577 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,7 +375,7 @@
 /* Begin PBXTargetDependency section */
 		57EFFA6F18B149F7002E5577 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 57EFFA4D18B149F7002E5577 /* MSPageViewController */;
+			target = 57EFFA4D18B149F7002E5577 /* MSPageViewControllerSampleApp */;
 			targetProxy = 57EFFA6E18B149F7002E5577 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -323,6 +400,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		351DDACF1DA3234300B0E8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MSPageViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindsnacks.MSPageViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		351DDAD01DA3234300B0E8D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MSPageViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindsnacks.MSPageViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		57EFFA7818B149F7002E5577 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -466,6 +609,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		351DDACE1DA3234300B0E8D5 /* Build configuration list for PBXNativeTarget "MSPageViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				351DDACF1DA3234300B0E8D5 /* Debug */,
+				351DDAD01DA3234300B0E8D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		57EFFA4918B149F7002E5577 /* Build configuration list for PBXProject "MSPageViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -475,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		57EFFA7A18B149F8002E5577 /* Build configuration list for PBXNativeTarget "MSPageViewController" */ = {
+		57EFFA7A18B149F8002E5577 /* Build configuration list for PBXNativeTarget "MSPageViewControllerSampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57EFFA7B18B149F8002E5577 /* Debug */,
